@@ -1,0 +1,128 @@
+<html>
+<head>
+<title> FORM </title>
+
+<style>
+
+.divContainer {
+border: 1px solid black;
+text-align: center;
+margin-left: 250px;
+margin-right: 250px;
+}
+
+.divHeading {
+border: 1px solid black;
+height: 50px;
+background-color: #1b9db6;
+font-size: 40px;
+color: antiqueWhite;
+}
+
+.divRegister {
+margin-top: 10px;
+margin-left: 100px;
+font-family: verdana;
+font-size: 15px;
+}
+
+.divFooter {
+margin-top: 50px;
+}
+
+</style>
+
+</head >
+<body>
+
+<div class="divContainer">
+
+<div class="divHeading">
+Register For Job
+</div>
+
+<div class="divRegister">
+<table align="center">
+<tr>
+	<td>First Name</td>
+	<td><input id="fname"></td>
+</tr>
+<tr>
+	<td>Last Name</td>
+	<td><input id="lname"></td>
+</tr>
+<tr>
+	<td>Education</td>
+	<td><select name="edu" id="education">
+		<option value="-1">-Select-</option>
+		<option value="Higher Secondary">Higher Secondary</option>
+		<option value="Intermediate">Intermediate</option>
+		<option value="Under Graduate">Under Graduate</option>
+		<option value="Post Graduate">Post Graduate</option>
+	    </select>
+	</td>
+</tr>
+<tr>
+	<td>Passed Out Year</td>
+	<td><input type="number" id="passout"></td>
+</tr>
+<tr>
+	<td>Years of Experience</td>
+	<td><select name="exp" id="yearsExp">
+		<option value="0">0</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="Greater than 2 Years">2+</option>
+	    </select>
+	</td>	
+</tr>
+<tr>
+	<td>Job Keywords</td>
+	<td><textarea id="keywords" name="w3review" rows="2" cols="20"></textarea></td>	
+</tr>
+<tr>
+	<td></td>
+	<td><button type="button" onclick="myFunc()">Add Details</button>
+	    <button type="button">Cancel</button>
+	</td>	
+</tr>
+</table>
+
+<table id="details" style="margin:40px 0px 0px 0px; display: none" align="center" border="1">
+<tr>
+	<th>Name</th>
+	<th>Education</th>
+	<th>Passed Out</th>
+	<th>Years of Experience</th>
+	<th>Job Keywords</th>
+</tr>
+<tr>
+	<td id="tname"></td>
+	<td id="tedu"></td>
+	<td id="tpass"></td>
+	<td id="texp"></td>
+	<td id="tkey"></td>
+
+</table>
+</div>
+
+<div class="divFooter">
+@Copyrights www.xyz.com
+</div>
+
+</div>
+
+<script>
+function myFunc()
+{
+	document.getElementById('details').style.display = "block";
+	document.getElementById('tname').innerHTML=document.getElementById('fname').value+' '+document.getElementById('lname').value;
+	document.getElementById('tedu').innerHTML=document.getElementById('education').value;
+	document.getElementById('tpass').innerHTML=document.getElementById('passout').value;
+	document.getElementById('texp').innerHTML=document.getElementById('yearsExp').value;
+	document.getElementById('tkey').innerHTML=document.getElementById('keywords').value;
+}
+</script>
+
+</body>
+</html>
