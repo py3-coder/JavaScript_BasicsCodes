@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+function validiatedigit() {
+var num = document.myform.number.value;
+
+if(isNaN(num)){
+  alert("Not a number");
+   return false;
+}else if(num.length !=4){
+    alert("Number length is not 4");
+    return false;
+    }
+else if(num.length == 4){
+alert("Number is 4 digit");
+return true;
+}
+}
+
+</script>
+<body>
+<form name="myform" method ="post" action = "" onsubmit="return validiatedigit();">
+Number : <input type="text" name="number">
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
